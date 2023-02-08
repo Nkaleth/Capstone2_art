@@ -1,21 +1,10 @@
-import _ from "lodash";
-import "./style.css";
-// import $ from 'jquery';
-import loadarts from "./modules/arts.js";
-import { innerData } from "./modules/Dom.js";
+import './style.css';
+import { openComments } from './modules/comments_popup.js';
 
-innerData();
+const buttonTest = document.getElementById('436453');
+// const popUpComments = document.querySelector('.popUpComments');
 
-loadarts();
-
-// function component() {
-//   const element = document.createElement('div');
-
-//   // Lodash, now imported by this script
-//   element.innerHTML = _.join(['Art', 'Gallery!'], ' ');
-//   element.classList.add('art');
-//   return element;
-// }
-
-// document.body.appendChild(component());
-
+buttonTest.addEventListener('click', () => {
+  /* here goes a code to detect the ID button of the painting */
+  openComments(6266929); /* here use the function with the ID */
+});

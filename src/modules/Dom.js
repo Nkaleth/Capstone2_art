@@ -4,9 +4,9 @@ import countGallery from './countGallery.js';
 
 const container = document.querySelector('.container');
 
-const like = (element) => {
-  addlikes(element);
-};
+// const like = (element) => {
+//   addlikes(element);
+// };
 
 const innerData = (arts) => {
   const URL = 'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Auguste%20Renoir&showOnly=openAccess';
@@ -16,7 +16,6 @@ const innerData = (arts) => {
     console.log(data);
     return data;
   };
-  fetchData(URL);
   const holder = document.createElement('div');
   holder.classList.add('grid-container');
   arts.forEach((art) => {
