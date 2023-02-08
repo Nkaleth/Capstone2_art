@@ -17,3 +17,85 @@ body h2 {
 .art {
   font-weight: 700;
 }
+
+/* Comments pop up styles */
+
+.popUpComments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.xclose {
+  position: relative;
+  left: 18%;
+  top: 60px;
+}
+
+.imageComments {
+  width: 50%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageComments img {
+  width: 60%;
+  height: auto;
+}
+
+.detailsComments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.detailsComments ul {
+  padding-inline-start: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.detailsComments li {
+  display: block;
+}
+
+.divComments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divComments ul {
+  padding-inline-start: 0;
+}
+
+.divComments li {
+  display: block;
+}
+
+.addComment {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: auto;
+  align-items: center;
+}
+
+.formComment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  height: 50px;
+}
