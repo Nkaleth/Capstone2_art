@@ -1,7 +1,7 @@
 // import ht2 from '../img/heart2.png';
 // import countGallery from './countGallery.js';
 // import { addlikes, getlikes } from "./likes.js";
-const URL = 'https://collectionapi.metmuseum.org/public/collection/v1/search?q=Auguste+Renoir&showOnly=openAccess%7CwithImage%7ConDisplay%7Chighlights&material=Canvas';
+const URL = 'https://collectionapi.metmuseum.org/public/collection/v1/search?q=Auguste+Renoir&showOnly=openAccess%7CwithImage%7ConDisplay&isPublicDomain=true&hasImages=true';
 
 let stringPaintings = '';
 
@@ -13,6 +13,7 @@ const loadData = () => {
     const IDs = data.objectIDs;
     IDs.forEach((element) => {
       const readIds = async (element) => {
+        const gallery = document.querySelector('.gallery');
         const request = new Request(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${element}`);
         const response = await fetch(request);
         const data = await response.json();
@@ -33,7 +34,6 @@ const loadData = () => {
                                       </div>
                                   </div>
                                 </article>`;
-        const gallery = document.querySelector('.gallery');
         gallery.innerHTML = stringPaintings;
       };
       readIds(element);
