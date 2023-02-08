@@ -41,6 +41,7 @@ header > div {
   border-bottom: 1px solid black;
   top: 0;
 }
+
 .fd-number {
   font-weight: bold;
   color: black;
@@ -65,7 +66,6 @@ header > div {
 
 .artworks {
   display: inline-block;
-  font-family: arial;
   position: relative;
 }
 
@@ -79,6 +79,8 @@ header > div {
 
 .home-logo {
   width: 3%;
+}
+
 /* Comments pop up styles */
 
 .popUpComments {

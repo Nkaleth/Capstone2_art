@@ -1,59 +1,45 @@
 // import ht2 from '../img/heart2.png';
-import countGallery from './countGallery.js';
+// import countGallery from './countGallery.js';
 // import { addlikes, getlikes } from "./likes.js";
+const URL = 'https://collectionapi.metmuseum.org/public/collection/v1/search?q=Auguste+Renoir&showOnly=openAccess%7CwithImage%7ConDisplay%7Chighlights&material=Canvas';
 
-const container = document.querySelector('.container');
+let stringPaintings = '';
 
-// const like = (element) => {
-//   addlikes(element);
-// };
-
-const innerData = (arts) => {
-  const URL = 'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=Auguste%20Renoir&showOnly=openAccess';
-  const fetchData = async (URL) => {
-    const response = await fetch(URL);
+const loadData = () => {
+  const getdata = async () => {
+    const request = new Request(URL);
+    const response = await fetch(request);
     const data = await response.json();
-    console.log(data);
-    return data;
-  };
-  const holder = document.createElement('div');
-  holder.classList.add('grid-container');
-  arts.forEach((art) => {
-    const div = document.createElement('div');
-    div.innerHTML = `
-      <div class="grid-item">
-          <div class="food">
-              <div>
-                 <span style="display: none" id="idCategory">${art.id}</span>
-                  <img src="${art.artist_display}" height="200" alt="">
-              </div>
-              <div class="food-name">
-                  <span>${art.title}</span>
-                  <span class="like"><img src="${ht2}" alt="" width="15" height="15" srcset=""></span>
-              </div>
-              <div class="likes">
-                  <span class="likes-count">0<span> likes</span></span>
-              </div>
-              <div>
-               <input type="button" value="comments">
-              </div>
-          </div>
-      </div>`;
-    div.querySelector('.like').addEventListener('click', (e) => {
-      like(
-        e.target.parentNode.parentNode.parentNode.querySelector('#idCategory')
-          .innerText,
-      );
+    const IDs = data.objectIDs;
+    IDs.forEach((element) => {
+      const readIds = async (element) => {
+        const request = new Request(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${element}`);
+        const response = await fetch(request);
+        const data = await response.json();
+        stringPaintings += `<article class="painting">  <!-- container for each painting-->
+                                    <div class="painting">
+                                      <div>
+                                        <img src= '${data.primaryImageSmall}' height="200" alt="PAINTING IMAGE">
+                                        <p>${data.title}</p>          
+                                      </div>
+                                      <div class="likes">
+                                          <span class="likes-count">0<span> likes</span></span>
+                                      </div>
+                                      <div>
+                                      <input id="${data.objectID}" type="button" value="Comments">
+                                      </div>
+                                      <div>
+                                        <input id="${data.objectID}" type="button" value="Reservations">
+                                      </div>
+                                  </div>
+                                </article>`;
+        const gallery = document.querySelector('.gallery');
+        gallery.innerHTML = stringPaintings;
+      };
+      readIds(element);
     });
-    holder.appendChild(div);
-  });
-  return holder;
+  };
+  getdata();
 };
 
-const fillDom = (arts) => {
-  container.append(innerData(arts));
-  countGallery(arts.length);
-  getlikes();
-};
-
-export { fillDom, innerData };
+export default loadData;
