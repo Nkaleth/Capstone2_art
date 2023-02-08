@@ -35,10 +35,9 @@ header > div {
   margin-right: auto;
   display: flex;
   align-items: center;
-  gap: 8em;
+  gap: 13em;
   position: fixed;
   background: hsl(240deg 6% 87%);
-  border-bottom: 1px solid black;
   top: 0;
 }
 .fd-number {
