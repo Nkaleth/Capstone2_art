@@ -6,7 +6,6 @@ const openComments = (id) => {
     const request = new Request(link);
     const response = await fetch(request);
     const data = await response.json();
-    console.log(data);
     const stringCommentPopup = `<article class="popUpComments">
                               <img id="xclose" class="xclose" src = "${Xclose}">
                               <section class="imageComments">
