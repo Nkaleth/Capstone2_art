@@ -24,16 +24,19 @@ body h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .xclose {
   position: relative;
-  left: 18%;
-  top: 60px;
+  margin-left: 2%;
+  left: 42%;
+  width: 40px;
+  top: 2rem;
 }
 
 .imageComments {
-  width: 50%;
+  width: 100%;
   height: auto;
   display: flex;
   align-items: center;
@@ -41,29 +44,38 @@ body h2 {
 }
 
 .imageComments img {
-  width: 60%;
+  width: 75%;
   height: auto;
+}
+
+.titleComments {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
 }
 
 .detailsComments {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
+  width: 100%;
 }
 
 .detailsComments ul {
+  font-size: auto;
   padding-inline-start: 0;
-  width: 100%;
-  height: 60px;
+  width: 90%;
+  height: auto;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
 }
 
 .detailsComments li {
   display: block;
+  margin: 1%;
 }
 
 .divComments {
