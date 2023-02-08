@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap");
 
 body {
-  background-color: bisque;
+  background-color: white;
   font-family: "Titillium Web", sans-serif;
   min-height: 100vh;
   position: relative;
@@ -38,6 +38,7 @@ header > div {
   gap: 13em;
   position: fixed;
   background: hsl(240deg 6% 87%);
+  border-bottom: 1px solid black;
   top: 0;
 }
 .fd-number {
