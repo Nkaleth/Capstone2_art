@@ -27,10 +27,10 @@ const loadData = () => {
                                           <span class="likes-count">0<span> likes</span></span>
                                       </div>
                                       <div>
-                                      <input id="${data.objectID}" type="button" value="Comments">
+                                        <button id="${data.objectID}" class="bComments">Comments</button>                            
                                       </div>
                                       <div>
-                                        <input id="${data.objectID}" type="button" value="Reservations">
+                                        <button id="${data.objectID}" class="bReservations">Reservations</button>
                                       </div>
                                   </div>
                                 </article>`;
