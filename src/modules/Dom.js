@@ -29,17 +29,40 @@ const loadData = () => {
                                       <input id="${data.objectID}" type="button" value="Comments">
                                       </div>
                                       <div>
-                                        <input id="${data.objectID}" type="button" value="Reservations">
+                                        <input class="reservationBtn" id="${data.objectID}" type="button" value="Reservations">
                                       </div>
                                   </div>
                                 </article>`;
         const gallery = document.querySelector('.gallery');
         gallery.innerHTML = stringPaintings;
+
+        const reservationBtns = document.querySelectorAll('.reservationBtn');
+        reservationBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const reservationPopup = document.querySelector('#reservationPopup');
+            reservationPopup.style.display = 'block';
+
+            // retrieve details of the selected item
+            const itemTitle = document.querySelector('#itemDetails h1');
+            itemTitle.textContent = data.title;
+            const itemImage = document.querySelector('#itemDetails #eachImage');
+            itemImage.src = data.primaryImageSmall;
+            const itemFeatures = document.querySelector('#itemDetails #features');
+            itemFeatures.innerHTML = ''; // clear previous content
+            data.contextualtext.forEach((feature) => {
+              const li = document.createElement('li');
+              li.textContent = feature;
+              itemFeatures.appendChild(li);
+            });
+          });
+        });
       };
       readIds(element);
     });
   };
   getdata();
 };
+
+
 
 export default loadData;
