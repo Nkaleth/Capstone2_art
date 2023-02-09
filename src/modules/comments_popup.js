@@ -44,4 +44,6 @@ const openComments = (id) => {
   getdata();
 };
 
+
+
 export { Xclose, openComments };
