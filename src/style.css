@@ -203,38 +203,27 @@ main .grid-item {
   margin-bottom: 2em;
 }
 
-.paint-name .like {
-  float: right;
-}
-
-.paint-name .like:hover {
-  transform: scale(120%);
-}
-
 .like {
   padding-top: 4%;
   padding-right: 30%;
+}
+
+.paint-name .like {
+  float: right;
 }
 
 .likes {
   padding-left: 50%;
 }
 
+.paint-name .like:hover {
+  transform: scale(1.2);
+}
+
 .likes-count span {
   color: gray;
 }
 
-.grid-container button {
-  width: 100%;
-  border: 1px black solid;
-  line-height: 1em;
-  outline: none;
-  font-size: large;
-  color: gray;
-  padding: 0.5em;
-  border-radius: 5px;
-  cursor: pointer;
-}
 .grid-container button {
   width: 100%;
   border: 1px black solid;
