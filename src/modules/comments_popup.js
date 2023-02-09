@@ -2,28 +2,24 @@ import Xclose from '../images/close.svg';
 
 const popUpCommentsContainer = document.querySelector('.containerCommentsPopUp');
 
-const loadComments = (container, id) => {
-  const getData = async () => {
-    const request = new Request(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/comments?item_id=${id}`);
-    const response = await fetch(request);
-    const data = await response.json();
-    let string = '';
-    data.forEach((element) => {
-      console.log(element);
-      string += `<li class="userComment">  ${element.creation_date} ${element.username}: ${element.comment}</li>`;
-    });
-    container.innerHTML = string;
-  };
-  getData();
+const loadComments = async (container, id) => {
+  const request = new Request(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/comments?item_id=${id}`);
+  const response = await fetch(request);
+  const data = await response.json();
+  let string = '';
+  data.forEach((element) => {
+    console.log(element);
+    string += `<li class="userComment">  ${element.creation_date} ${element.username}: ${element.comment}</li>`;
+  });
+  container.innerHTML = string;
 };
 
-const openComments = (id) => {
+const openComments = async (id) => {
   const link = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`;
-  const getdata = async () => {
-    const request = new Request(link);
-    const response = await fetch(request);
-    const data = await response.json();
-    const stringCommentPopup = `<article class="popUpComments" id=${data.objectID}>
+  const request = new Request(link);
+  const response = await fetch(request);
+  const data = await response.json();
+  const stringCommentPopup = `<article class="popUpComments" id=${data.objectID}>
                               <img id="xclose" class="xclose" src = "${Xclose}">
                               <section class="imageComments">
                                   <img src=${data.primaryImage} alt="" srcset="">
@@ -51,12 +47,10 @@ const openComments = (id) => {
                                   </form>
                               </section>
                           </article>`;
-    popUpCommentsContainer.innerHTML = stringCommentPopup;
-    popUpCommentsContainer.setAttribute('style', 'display: block');
-    const containerComments = document.getElementById(`c${data.objectID}`);
-    loadComments(containerComments, data.objectID);
-  };
-  getdata();
+  popUpCommentsContainer.innerHTML = stringCommentPopup;
+  popUpCommentsContainer.setAttribute('style', 'display: block');
+  const containerComments = document.getElementById(`c${data.objectID}`);
+  loadComments(containerComments, data.objectID);
 };
 
 const closePopUp = (container) => {

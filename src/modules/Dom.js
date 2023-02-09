@@ -5,21 +5,20 @@ const URL = 'https://collectionapi.metmuseum.org/public/collection/v1/search?q=A
 
 let stringPaintings = '';
 
-const loadData = () => {
-  const getdata = async () => {
-    const request = new Request(URL);
-    const response = await fetch(request);
-    const data = await response.json();
-    const IDs = data.objectIDs;
-    IDs.forEach((element) => {
-      const readIds = async (element) => {
-        const gallery = document.querySelector('.gallery');
-        const request = new Request(
-          `https://collectionapi.metmuseum.org/public/collection/v1/objects/${element}`,
-        );
-        const response = await fetch(request);
-        const data = await response.json();
-        stringPaintings += `<div class="grid-item">  <!-- container for each painting-->
+const loadData = async () => {
+  const request = new Request(URL);
+  const response = await fetch(request);
+  const data = await response.json();
+  const IDs = data.objectIDs;
+  IDs.forEach((element) => {
+    const readIds = async (element) => {
+      const gallery = document.querySelector('.gallery');
+      const request = new Request(
+        `https://collectionapi.metmuseum.org/public/collection/v1/objects/${element}`,
+      );
+      const response = await fetch(request);
+      const data = await response.json();
+      stringPaintings += `<div class="grid-item">  <!-- container for each painting-->
                                     <div class="paintings">
                                       <div>
                                         <img src= '${data.primaryImageSmall}' height="200" alt="PAINTING IMAGE">
@@ -40,12 +39,10 @@ const loadData = () => {
                                       </div>
                                   </div>
                                 </div>`;
-        gallery.innerHTML = stringPaintings;
-      };
-      readIds(element);
-    });
-  };
-  getdata();
+      gallery.innerHTML = stringPaintings;
+    };
+    readIds(element);
+  });
 };
 
 export default loadData;
