@@ -57,7 +57,7 @@ const openReservations = (id) => {
                                   </form>
                               </section>
                           </article>`;
-    popupReservation.innerHTML = stringCommentPopup;
+    popupReservation.innerHTML = stringReservationsPopup;
     popupReservation.setAttribute('style', 'display: block');
     const containerReservations = document.getElementById(`c${data.objectID}`);
     loadComments(containerReservations, data.objectID);
