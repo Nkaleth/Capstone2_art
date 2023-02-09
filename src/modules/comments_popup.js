@@ -1,12 +1,13 @@
 import Xclose from '../images/close.svg';
 
+const popUpCommentsContainer = document.querySelector('.containerCommentsPopUp');
+
 const openComments = (id) => {
   const link = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`;
   const getdata = async () => {
     const request = new Request(link);
     const response = await fetch(request);
     const data = await response.json();
-    console.log(data);
     const stringCommentPopup = `<article class="popUpComments">
                               <img id="xclose" class="xclose" src = "${Xclose}">
                               <section class="imageComments">
@@ -36,14 +37,63 @@ const openComments = (id) => {
                                   </form>
                               </section>
                           </article>`;
-    const popUpCommentsContainer = document.querySelector('.containerCommentsPopUp');
-
     popUpCommentsContainer.innerHTML = stringCommentPopup;
     popUpCommentsContainer.setAttribute('style', 'display: block');
   };
   getdata();
 };
 
+const closePopUp = (container) => {
+  container.setAttribute('style', 'display: none');
+};
 
+const sendData = async (link) => {
+  const request = new Request(link);
+  const response = await fetch(request, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  const data = await response.json();
+  console.log(data);
+};
 
-export { Xclose, openComments };
+const addNewComment = (item_id,username, comment) => {
+  const sendData = async (link) => {
+    const request = new Request(link);
+    const response = await fetch(request, {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: 'item1',
+        username: 'Jane',
+        comment: 'Hello',
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    await response.json();
+  };
+  sendData(url);
+};
+
+const loadComments = () => {
+  const getData = async (link) => {
+    const request = new Request(link);
+    const response = await fetch(request);
+    const data = await response.json();
+    const { result } = data;
+    const scoresList = document.querySelector('.scoresList');
+    let string = '';
+    result.forEach((element) => {
+      string += `<li class="indivScore"><img src="https://playvalorant.com/assets/images/leaderboards/radiant-badge.png" alt="badge"><p>${element.score}</p><p>${element.user}</p></li>`;
+    });
+    scoresList.innerHTML = string;
+  };
+  getData(url);
+};
+
+export {
+  Xclose, openComments, closePopUp, sendData, addNewComment, loadComments
+};
