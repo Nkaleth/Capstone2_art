@@ -35,18 +35,24 @@ const openReservations = async (id) => {
                               </section>
                               <section class="divComments">
                                   <p class="countComments">Comments 2</p>
-                                  <ul class="listComments" id="r${data.objectID}">
+                                  <ul class="listComments" id="c${data.objectID}">
                                   </ul>
                               </section>
                               <section class="addComment">
-                                  <p>Add a comment</p>
-                                  <form id="${data.objectID}" class="formComment" action="">
-                                      <input class="username" type="text" name="" id="username" placeholder="Your name" required>
-                                      <input class="comment" type="text" name="" id="comment" placeholder="Your insights" required>
-                                      <button class="addCommentButton" type="submit">Comment</button>
+                                  <p>Add a reservation</p>
+                                  <form id="${data.objectID}" class="formReserve" action="">
+                                  <label>Enter your name:</label>            
+                                  <input type="text" id="name" name="user_name" maxlength="30" placeholder="your name" required>
+                              
+                                  <label>Start Date:</label>
+                                  <input type="date" id="startDate"  placeholder="start date" required>
+                              
+                                  <label>End Date:</label>
+                                  <input type="date" id="endDate" placeholder="end date" required>
+                                  <button class="reserveButton" type="submit">Reserve</button>
                                   </form>
                               </section>
-                          </article>`;
+                            </article>`;
   popupReservation.innerHTML = stringReservePopup;
   popupReservation.setAttribute('style', 'display: block');
   const containerComments = document.getElementById(`r${data.objectID}`);
@@ -55,18 +61,6 @@ const openReservations = async (id) => {
 
 const closePopUp = (container) => {
   container.setAttribute('style', 'display: none');
-};
-
-const newID = async (link) => {
-  const request = new Request(link);
-  const response = await fetch(request, {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  });
-  const data = await response.json();
-  console.log(data);
 };
 
 const addNewReservation = (itemid, username, start_date, end_date, url) => {
@@ -86,5 +80,5 @@ const addNewReservation = (itemid, username, start_date, end_date, url) => {
 };
 
 export {
-  Xclose, openReservations, closePopUp, newID, addNewReservation, loadReserve,
+  Xclose, openReservations, closePopUp, addNewReservation, loadReserve,
 };
