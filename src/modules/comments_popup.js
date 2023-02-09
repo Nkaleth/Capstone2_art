@@ -69,20 +69,43 @@ const newID = async (link) => {
   console.log(data);
 };
 
-const addNewComment = (itemid, username, comment, url) => {
-  const sendData = async (link) => {
-    const request = new Request(link);
-    await fetch(request, {
-      method: 'POST',
-      body: JSON.stringify({
-        item_id: `${itemid}`,
-        username: `${username}`,
-        comment: `${comment}`,
-      }),
-    });
+// const addNewComment = (itemid, username, comment, url) => {
+//   const sendData = async (link) => {
+//     const request = new Request(link);
+//     await fetch(request, {
+//       method: 'POST',
+//       body: JSON.stringify({
+//         item_id: `${itemid}`,
+//         username: `${username}`,
+//         comment: `${comment}`,
+//       }),
+//     });
+//   };
+//   sendData(url);
+// };
+
+const addNewComment = async (idItem, username, comment) => {
+  const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/comments';
+  const user = username;
+  const comment1 = comment;
+  const dataToPost = {
+    item_id: idItem,
+    username: user,
+    comment: comment1,
   };
-  sendData(url);
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataToPost),
+  });
+  if (!response.ok) {
+    const message = `An error has occured: ${response.status}`;
+    throw new Error(message);
+  }
 };
+
 
 export {
   Xclose, openComments, closePopUp, newID, addNewComment, loadComments,

@@ -28,7 +28,7 @@ popUpCommentsContainer.addEventListener('click', (event) => {
   formComment.addEventListener('submit', (event) => {
     event.preventDefault();
     console.log(username.value, comment.value, formComment.id);
-    addNewComment(formComment.id, username.value, comment.value, url);
+    addNewComment(formComment.id, username.value, comment.value);
     formComment.reset();
   });
 });
