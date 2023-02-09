@@ -40,7 +40,7 @@ const openReservations = async (id) => {
                               </section>
                               <section class="addComment">
                                   <p>Add a reservation</p>
-                                  <form id="${data.objectID}" class="formReserve" action="">
+                                  <form id="r${data.objectID}" class="formReserve" action="">
                                   <label>Enter your name:</label>            
                                   <input type="text" id="name" name="user_name" maxlength="30" placeholder="your name" required>
                               
