@@ -188,3 +188,71 @@ header > div {
   align-items: flex-start;
   height: 50px;
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  column-gap: 2%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5em;
+}
+
+main .grid-item {
+  border: none;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.paintings {
+  font-size: small;
+}
+
+.paintings img {
+  border-radius: 5px;
+}
+
+.paintings > div {
+  margin-bottom: 2em;
+}
+
+.like {
+  padding-top: 4%;
+  padding-right: 30%;
+}
+
+.paint-name .like {
+  float: right;
+}
+
+.likes {
+  padding-left: 50%;
+}
+
+.paint-name .like:hover {
+  transform: scale(1.2);
+}
+
+.likes-count span {
+  color: gray;
+}
+
+.grid-container button {
+  width: 100%;
+  border: 1px black solid;
+  line-height: 1em;
+  outline: none;
+  font-size: large;
+  color: gray;
+  padding: 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.grid-container button:hover {
+  outline: none;
+  background: rgb(205, 158, 41);
+  color: white;
+}
