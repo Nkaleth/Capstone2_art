@@ -1,4 +1,5 @@
 import Xclose from '../images/close.svg';
+import countData from './countComments.js';
 
 const popUpCommentsContainer = document.querySelector('.containerCommentsPopUp');
 
@@ -6,11 +7,15 @@ const loadComments = async (container, id) => {
   const request = new Request(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/comments?item_id=${id}`);
   const response = await fetch(request);
   const data = await response.json();
+  const count = countData(data);
+  const divCount = document.querySelector('.countComments');
+  divCount.innerHTML = count;
   let string = '';
   data.forEach((element) => {
     string += `<li class="userComment">  ${element.creation_date} ${element.username}: ${element.comment}</li>`;
   });
   container.innerHTML = string;
+  return count;
 };
 
 const addNewComment = async (idItem, username, comment) => {
@@ -57,7 +62,7 @@ const openComments = async (id) => {
                                   </ul>
                               </section>
                               <section class="divComments">
-                                  <p class="countComments">Comments 2</p>
+                                  <p class="countComments">Comments(0)</p>
                                   <ul class="listComments" id="c${data.objectID}">
                                   </ul>
                               </section>
@@ -86,18 +91,6 @@ const openComments = async (id) => {
 const closePopUp = (container) => {
   container.setAttribute('style', 'display: none');
 };
-
-// const newID = async (link) => {
-//   const request = new Request(link);
-//   const response = await fetch(request, {
-//     method: 'POST',
-//     headers: {
-//       'Content-type': 'application/json; charset=UTF-8',
-//     },
-//   });
-//   const data = await response.json();
-//   console.log(data);
-// };
 
 export {
   Xclose, openComments, closePopUp, addNewComment, loadComments,

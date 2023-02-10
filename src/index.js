@@ -4,8 +4,6 @@ import {
 } from './modules/comments_popup.js';
 import loadData from './modules/Dom.js';
 
-// const urlnewID = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
-
 const popUpCommentsContainer = document.querySelector('.containerCommentsPopUp');
 
 const gallery = document.querySelector('.gallery');
