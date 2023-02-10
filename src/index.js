@@ -1,17 +1,56 @@
 import './style.css';
-import { openComments } from './modules/comments_popup.js';
+import { closePopUp, openComments, addNewComment, newID, loadComments } from './modules/comments_popup.js';
 import loadData from './modules/Dom.js';
-import { openReservations } from './modules/reserve.js';
+import { loadReserve, openReservations } from './modules/reserve.js';
 
-const buttonTest = document.getElementById('436453');
-// const popUpComments = document.querySelector('.popUpComments');
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/comments';
+
+// const urlnewID = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
+
+const popUpCommentsContainer = document.querySelector('.containerCommentsPopUp');
+const popupReservationContainer = document.querySelector('.reservationPopup');
+
+const gallery = document.querySelector('.gallery');
 
 loadData();
-buttonTest.addEventListener('click', () => {
-  /* here goes a code to detect the ID button of the painting */
-  openComments(6266929); /* here use the function with the ID */
+gallery.addEventListener('click', (event) => {
+  const { target } = event;
+  if (target.value === 'Comments') {
+    openComments(target.id);
+  }
+  if (target.value === 'Reservations') {
+    openReservations(target.id);
+  }
 });
-buttonTest.addEventListener('click', () => {
-  /* here goes a code to detect the ID button of the painting */
-  openReservations(6266929); /* here use the function with the ID */
+
+popUpCommentsContainer.addEventListener('click', (event) => {
+  const { target } = event;
+  if (target.id === 'xclose') {
+    closePopUp(popUpCommentsContainer);
+  }
+  const formComment = document.querySelector('.formComment');
+  const { username, comment } = formComment.elements;
+  formComment.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log(username.value, comment.value, formComment.id);
+    addNewComment(formComment.id, username.value, comment.value);
+    formComment.reset();
+  });
 });
+
+/* Reservations part */
+
+popupReservationContainer.addEventListener('click', (event) => {
+  const { target } = event;
+  if (target.id === 'xclose') {
+    closePopUp(popupReservationContainer);
+  }
+  const formComment = document.querySelector('.formComment');
+  const { username, comment } = formComment.elements;
+  formComment.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    formComment.reset();
+  });
+});
+
