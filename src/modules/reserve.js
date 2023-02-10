@@ -25,11 +25,16 @@ const addNewReservation = async (idItem, startdate, enddate, username) => {
   const startdate1 = startdate;
   const enddate1 = enddate;
   const dataToPost = {
+    // item_id: 'item1',
+    // username: 'Jane',
+    // date_start: '2020-10-15',
+    // date_end: '2020-10-16',
     item_id: idItem,
     username: user,
     date_start: startdate1,
     date_end: enddate1,
   };
+  console.log(JSON.stringify(dataToPost));
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -94,8 +99,8 @@ const openReservations = async (id) => {
     // const start_date = document.querySelector('#startDate');
     // const end_date = document.querySelector('#endDate');
     const { username, startDate, endDate } = formReservations.elements;
-    // console.log(data.objectID, username.value, startDate.value, endDate.value);
-    addNewReservation(data.objectID, username.value, startDate.value, endDate.value);
+    console.log(data.objectID, username.value, startDate.value, endDate.value);
+    addNewReservation(data.objectID, startDate.value, endDate.value, username.value);
     formReservations.reset();
   });
 };
