@@ -19,7 +19,11 @@ const getLikes = async () => {
   const data = await res.json();
   const objetc1 = {};
   data.forEach((element) => {
-    objetc1[element.item_id] = element.likes;
+    if (element.likes !== 0) {
+      objetc1[element.item_id] = element.likes;
+    } else if (element.likes === undefined) {
+      objetc1[element.item_id] = 0;
+    }
   });
   return objetc1;
 };

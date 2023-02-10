@@ -1,8 +1,9 @@
 import ht2 from '../images/heart2.png';
 // import countGallery from './countGallery.js';
-import { likeArts, getLikes } from './api.js';
+import { getLikes } from './api.js';
 
 let stringPaintings = '';
+let idKey;
 
 const URL = 'https://collectionapi.metmuseum.org/public/collection/v1/search?q=Auguste+Renoir&showOnly=openAccess%7CwithImage%7ConDisplay&isPublicDomain=true&hasImages=true';
 
@@ -11,8 +12,7 @@ const loadData = async () => {
   const response = await fetch(request);
   const data = await response.json();
   const IDs = data.objectIDs;
-  const numLikes = await getLikes(data.objectIDs);
-  console.log(numLikes);
+  idKey = await getLikes();
   IDs.forEach((element) => {
     const readIds = async (element) => {
       const gallery = document.querySelector('.gallery');
@@ -32,7 +32,7 @@ const loadData = async () => {
                                         </div>         
                                       
                                       <div class="likes">
-                                          <span class="likes-count"><span id="spl${data.objectID}">likes(0)</span></span>
+                                          <span class="likes-count"><span id="spl${data.objectID}">Likes(${idKey[data.objectID]})</span></span>
                                       </div>
                                       <div>
                                         <button id="${data.objectID}" class="bComments" value="Comments" >Comments</button>                            
@@ -45,10 +45,6 @@ const loadData = async () => {
       gallery.innerHTML = stringPaintings;
     };
     readIds(element);
-    const divlike = document.querySelector(`#spl${data.objectID}`);
-    divlike.innerHTML = numLikes[data.objectID];
-    // const divlike = document.querySelector(`#spl${element.item_id}`);
-    console.log(divlike);
   });
 };
 
