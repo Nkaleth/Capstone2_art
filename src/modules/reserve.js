@@ -18,17 +18,17 @@ const loadReserve = async (container, id) => {
   return count;
 };
 
-const addNewReservation = async (idItem, start_date, end_date, username) => {
-  const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/reservations';
+const addNewReservation = async (idItem, startdate, enddate, username) => {
+  const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/reservations/';
   const containerReserves = document.getElementById(`cr${idItem}`);
   const user = username;
-  const start_date1 = start_date;
-  const end_date1 = end_date;
+  const startdate1 = startdate;
+  const enddate1 = enddate;
   const dataToPost = {
     item_id: idItem,
     username: user,
-    start_date: start_date1,
-    end_date: end_date1,
+    date_start: startdate1,
+    date_end: enddate1,
   };
   const response = await fetch(url, {
     method: 'POST',
@@ -39,7 +39,7 @@ const addNewReservation = async (idItem, start_date, end_date, username) => {
   });
   if (!response.ok) {
     const message = `An error has occured: ${response.status}`;
-    // throw new Error(message);
+    throw new Error(message);
   }
   loadReserve(containerReserves, idItem);
 };
@@ -72,7 +72,7 @@ const openReservations = async (id) => {
                                   <p>Add a reservation</p>
                                   <form id="r${data.objectID}" class="formReserve" action="">
                                   <label>Enter your name:</label>            
-                                  <input type="text" id="name" name="user_name" maxlength="30" placeholder="your name" required>
+                                  <input type="text" id="username" name="user_name" maxlength="30" placeholder="your name" required>
                               
                                   <label>Start Date:</label>
                                   <input type="date" id="startDate"  placeholder="start date" required>
@@ -90,11 +90,12 @@ const openReservations = async (id) => {
   const formReservations = document.querySelector(`#r${data.objectID}`);
   formReservations.addEventListener('submit', (e) => {
     e.preventDefault();
-    const uN = document.querySelector('#name');
-    const start_date = document.querySelector('#startDate');
-    const end_date = document.querySelector('#endDate');
-    // const { username, start_date, end_date } = formReservations.elements;
-    addNewReservation(data.objectID, uN.value, start_date.value, end_date.value);
+    // const uN = document.querySelector('#name');
+    // const start_date = document.querySelector('#startDate');
+    // const end_date = document.querySelector('#endDate');
+    const { username, startDate, endDate } = formReservations.elements;
+    // console.log(data.objectID, username.value, startDate.value, endDate.value);
+    addNewReservation(data.objectID, username.value, startDate.value, endDate.value);
     formReservations.reset();
   });
 };

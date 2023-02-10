@@ -48,14 +48,6 @@ popupReservationContainer.addEventListener('click', (event) => {
   if (target.id === 'xclose') {
     closePopUp(popupReservationContainer);
   }
-  const formComment = document.querySelector('.formComment');
-  const { username, comment } = formComment.elements;
-  formComment.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    formComment.reset();
-  });
 });
 
 loadReserve();
-
