@@ -1,11 +1,14 @@
 import './style.css';
-import {
-  closePopUp, openComments,
-} from './modules/comments_popup.js';
+import { closePopUp, openComments } from './modules/comments_popup.js';
 import loadData from './modules/Dom.js';
 import { likeArts } from './modules/api.js';
+import getCounts from './modules/itemsCounter.js';
 
-const popUpCommentsContainer = document.querySelector('.containerCommentsPopUp');
+getCounts();
+
+const popUpCommentsContainer = document.querySelector(
+  '.containerCommentsPopUp',
+);
 
 const gallery = document.querySelector('.gallery');
 
