@@ -17,8 +17,11 @@ const getLikes = async () => {
   const API_URL = invAPI;
   const res = await fetch(API_URL);
   const data = await res.json();
-  console.log(data);
-  return data;
+  const objetc1 = {};
+  data.forEach((element) => {
+    objetc1[element.item_id] = element.likes;
+  });
+  return objetc1;
 };
 
 export { likeArts, getLikes };
