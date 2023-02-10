@@ -1,5 +1,4 @@
 import ht2 from '../images/heart2.png';
-// import countGallery from './countGallery.js';
 import { getLikes } from './api.js';
 
 let stringPaintings = '';
@@ -28,7 +27,7 @@ const loadData = async () => {
                                         </div>
                                         <div class="paint-name">
                                         <p>${data.title}</p>
-                                        <span class="like"><img id="h${data.objectID}" src="${ht2}" alt="" width="15" height="15" srcset="" name="heart"></span> 
+                                        <span class="like"><img id="h${data.objectID}" src="${ht2}" alt="Likes(${idKey[data.objectID]}" width="15" height="15" srcset="" name="heart"  alt="Likes(${idKey[data.objectID]})"></span> 
                                         </div>         
                                       
                                       <div class="likes">

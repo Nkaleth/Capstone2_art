@@ -19,6 +19,10 @@ gallery.addEventListener('click', (event) => {
     const idlike = target.id;
     const idlikefiltered = idlike.replace(/^\D+/g, '');
     likeArts(idlikefiltered);
+    let numlikes = Number(target.alt.replace(/^\D+/g, ''));
+    numlikes += 1;
+    const likecontainer = document.getElementById(`spl${idlikefiltered}`);
+    likecontainer.innerHTML = `Likes(${numlikes})`;
   }
 });
 
@@ -28,4 +32,3 @@ popUpCommentsContainer.addEventListener('click', (event) => {
     closePopUp(popUpCommentsContainer);
   }
 });
-/* Likes */
