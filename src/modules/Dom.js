@@ -28,7 +28,7 @@ const loadData = async () => {
                                         </div>
                                         <div class="paint-name">
                                         <p>${data.title}</p>
-                                        <span class="like"><img src="${ht2}" alt="" width="15" height="15" srcset=""></span> 
+                                        <span class="like"><img id="h${data.objectID}" src="${ht2}" alt="" width="15" height="15" srcset="" name="heart"></span> 
                                         </div>         
                                       
                                       <div class="likes">

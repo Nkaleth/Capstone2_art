@@ -1,17 +1,14 @@
 // Involvement API app_id: kpvz19cjHtM9ksn2bg7S
-
-const invAPI =
-  "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/AIzaSyCoZDomxnvVKAA5OOQ5orghTT-QQaZ13FU/likes";
-
+const invAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/likes';
 const likeArts = async (id) => {
   const API_URL = invAPI;
   fetch(API_URL, {
-    method: "POST",
+    method: 'POST',
     body: JSON.stringify({
       item_id: id,
     }),
     headers: {
-      "Content-type": "application/json; charset=UTF-8",
+      'Content-type': 'application/json; charset=UTF-8',
     },
   });
 };
@@ -25,4 +22,3 @@ const getLikes = async () => {
 };
 
 export { likeArts, getLikes };
-
