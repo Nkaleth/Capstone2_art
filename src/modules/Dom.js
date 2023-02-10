@@ -2,6 +2,8 @@ import ht2 from '../images/heart2.png';
 // import countGallery from './countGallery.js';
 import { likeArts, getLikes } from './api.js';
 
+let stringPaintings = '';
+
 const URL = 'https://collectionapi.metmuseum.org/public/collection/v1/search?q=Auguste+Renoir&showOnly=openAccess%7CwithImage%7ConDisplay&isPublicDomain=true&hasImages=true';
 
 const loadData = async () => {
