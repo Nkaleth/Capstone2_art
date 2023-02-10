@@ -22,3 +22,19 @@ popUpCommentsContainer.addEventListener('click', (event) => {
     closePopUp(popUpCommentsContainer);
   }
 });
+
+
+/*Likes*/
+
+const likeButtons = document.querySelectorAll('.like');
+console.log('daddadd', likeButtons);
+likeButtons.forEach((likeButton) => {
+  likeButton.addEventListener('click', async (event) => {
+    // const paintingId = event.target.parentNode.parentNode.querySelector('.bComments').id;
+    // await addLike(paintingId);
+    // // const numLikes = await getLikes(paintingId);
+    // event.target.parentNode.parentNode.querySelector(
+    //   '.likes-count',
+    // ).innerHTML = `${numLikes} likes`;
+  });
+});

@@ -19,7 +19,8 @@ const loadData = async () => {
       );
       const response = await fetch(request);
       const data = await response.json();
-      const numLikes = await getLikes(data.objectIDs);
+      // const numLikes = await getLikes(data.objectIDs);
+      // ${numLikes}
       stringPaintings += `<div class="grid-item">  <!-- container for each painting-->
                                     <div class="paintings">
                                       <div>
@@ -31,7 +32,7 @@ const loadData = async () => {
                                         </div>         
                                       
                                       <div class="likes">
-                                          <span class="likes-count">${numLikes}<span> likes</span></span>
+                                          <span class="likes-count"><span> likes</span></span>
                                       </div>
                                       <div>
                                         <button id="${data.objectID}" class="bComments" value="Comments" >Comments</button>                            
@@ -48,16 +49,3 @@ const loadData = async () => {
 };
 
 export default loadData;
-
-const likeButtons = document.querySelectorAll('.like');
-console.log('daddadd', likeButtons);
-likeButtons.forEach((likeButton) => {
-  likeButton.addEventListener('click', async (event) => {
-    const paintingId = event.target.parentNode.parentNode.querySelector('.bComments').id;
-    await addLike(paintingId);
-    // const numLikes = await getLikes(paintingId);
-    event.target.parentNode.parentNode.querySelector(
-      '.likes-count',
-    ).innerHTML = `${numLikes} likes`;
-  });
-});
