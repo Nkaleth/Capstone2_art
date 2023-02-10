@@ -68,11 +68,7 @@ const openComments = async (id) => {
                               </section>
                               <section class="addComment">
                                   <p>Add a comment</p>
-<<<<<<< HEAD
-                                  <form id="f${data.objectID}" class="formComment" action="">
-=======
                                   <form id="fc${data.objectID}" class="formComment" action="">
->>>>>>> development
                                       <input class="username" type="text" name="" id="username" placeholder="Your name" required>
                                       <input class="comment" type="text" name="" id="comment" placeholder="Your insights" required>
                                       <button class="addCommentButton" type="submit">Comment</button>
