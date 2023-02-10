@@ -1,7 +1,7 @@
 const countData = (data) => {
   let count = 0;
   if (!data) {
-    return 'No comments';
+    return 'Comments(0)';
   }
   data.forEach(() => {
     count += 1;
