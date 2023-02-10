@@ -1,5 +1,5 @@
 import Xclose from '../images/close.svg';
-// import countData from './countreservations.js';
+import countData from './countreservations.js';
 
 const popupReservation = document.querySelector('.reservationPopup');
 
@@ -12,7 +12,7 @@ const loadReserve = async (container, id) => {
   divCount.innerHTML = count;
   let string = '';
   data.forEach((element) => {
-    string += `<li class="userDetails">  ${element.username} ${element.start_date}: ${element.end_date}</li>`;
+    string += `<li class="userDetails">  ${element.username} ${element.date_start}: ${element.date_end}</li>`;
   });
   container.innerHTML = string;
   return count;
@@ -21,14 +21,11 @@ const loadReserve = async (container, id) => {
 const addNewReservation = async (idItem, startdate, enddate, username) => {
   const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/reservations/';
   const containerReserves = document.getElementById(`cr${idItem}`);
+  console.log(containerReserves);
   const user = username;
   const startdate1 = startdate;
   const enddate1 = enddate;
   const dataToPost = {
-    // item_id: 'item1',
-    // username: 'Jane',
-    // date_start: '2020-10-15',
-    // date_end: '2020-10-16',
     item_id: idItem,
     username: user,
     date_start: startdate1,
@@ -95,11 +92,7 @@ const openReservations = async (id) => {
   const formReservations = document.querySelector(`#r${data.objectID}`);
   formReservations.addEventListener('submit', (e) => {
     e.preventDefault();
-    // const uN = document.querySelector('#name');
-    // const start_date = document.querySelector('#startDate');
-    // const end_date = document.querySelector('#endDate');
     const { username, startDate, endDate } = formReservations.elements;
-    console.log(data.objectID, username.value, startDate.value, endDate.value);
     addNewReservation(data.objectID, startDate.value, endDate.value, username.value);
     formReservations.reset();
   });
