@@ -1,11 +1,8 @@
-import ht2 from "../images/heart2.png";
+import ht2 from '../images/heart2.png';
 // import countGallery from './countGallery.js';
-import { likeArts, getLikes } from "./api.js";
+import { likeArts, getLikes } from './api.js';
 
-const URL =
-  "https://collectionapi.metmuseum.org/public/collection/v1/search?q=Auguste+Renoir&showOnly=openAccess%7CwithImage%7ConDisplay&isPublicDomain=true&hasImages=true";
-
-let stringPaintings = "";
+const URL = 'https://collectionapi.metmuseum.org/public/collection/v1/search?q=Auguste+Renoir&showOnly=openAccess%7CwithImage%7ConDisplay&isPublicDomain=true&hasImages=true';
 
 const loadData = async () => {
   const request = new Request(URL);
@@ -14,9 +11,9 @@ const loadData = async () => {
   const IDs = data.objectIDs;
   IDs.forEach((element) => {
     const readIds = async (element) => {
-      const gallery = document.querySelector(".gallery");
+      const gallery = document.querySelector('.gallery');
       const request = new Request(
-        `https://collectionapi.metmuseum.org/public/collection/v1/objects/${element}`
+        `https://collectionapi.metmuseum.org/public/collection/v1/objects/${element}`,
       );
       const response = await fetch(request);
       const data = await response.json();
@@ -50,17 +47,15 @@ const loadData = async () => {
 
 export default loadData;
 
-const likeButtons = document.querySelectorAll(".like");
-console.log("daddadd", likeButtons);
+const likeButtons = document.querySelectorAll('.like');
+console.log('daddadd', likeButtons);
 likeButtons.forEach((likeButton) => {
-  likeButton.addEventListener("click", async (event) => {
-    const paintingId =
-      event.target.parentNode.parentNode.querySelector(".bComments").id;
+  likeButton.addEventListener('click', async (event) => {
+    const paintingId = event.target.parentNode.parentNode.querySelector('.bComments').id;
     await addLike(paintingId);
     // const numLikes = await getLikes(paintingId);
     event.target.parentNode.parentNode.querySelector(
-      ".likes-count"
+      '.likes-count',
     ).innerHTML = `${numLikes} likes`;
   });
 });
-

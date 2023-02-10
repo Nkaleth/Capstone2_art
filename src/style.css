@@ -71,7 +71,6 @@ header > div {
 
 .artworks h1 {
   position: relative;
-  font-family: "Luckiest Guy", cursive;
   color: rgb(77, 70, 70);
   z-index: 2;
   white-space: nowrap;
@@ -82,6 +81,21 @@ header > div {
 }
 
 /* Comments pop up styles */
+
+.containerCommentsPopUp {
+  display: none;
+  overflow-y: auto;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  opacity: 98%;
+  backdrop-filter: blur(80px);
+  transition: height 1s ease;
+  padding: 20px;
+}
 
 .popUpComments {
   display: flex;
@@ -203,38 +217,27 @@ main .grid-item {
   margin-bottom: 2em;
 }
 
-.paint-name .like {
-  float: right;
-}
-
-.paint-name .like:hover {
-  transform: scale(120%);
-}
-
 .like {
   padding-top: 4%;
   padding-right: 30%;
+}
+
+.paint-name .like {
+  float: right;
 }
 
 .likes {
   padding-left: 50%;
 }
 
+.paint-name .like:hover {
+  transform: scale(1.2);
+}
+
 .likes-count span {
   color: gray;
 }
 
-.grid-container button {
-  width: 100%;
-  border: 1px black solid;
-  line-height: 1em;
-  outline: none;
-  font-size: large;
-  color: gray;
-  padding: 0.5em;
-  border-radius: 5px;
-  cursor: pointer;
-}
 .grid-container button {
   width: 100%;
   border: 1px black solid;

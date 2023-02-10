@@ -1,16 +1,24 @@
-import "./style.css";
-import { openComments } from "./modules/comments_popup.js";
-import loadData from "./modules/Dom.js";
-// import itemsCounter from "./modules/itemsCounter.js";
+import './style.css';
+import {
+  closePopUp, openComments,
+} from './modules/comments_popup.js';
+import loadData from './modules/Dom.js';
 
-// itemsCounter();
+const popUpCommentsContainer = document.querySelector('.containerCommentsPopUp');
 
-const buttonTest = document.getElementById("436453");
-// const popUpComments = document.querySelector('.popUpComments');
+const gallery = document.querySelector('.gallery');
 
 loadData();
-buttonTest.addEventListener("click", () => {
-  /* here goes a code to detect the ID button of the painting */
-  openComments(6266929); /* here use the function with the ID */
+gallery.addEventListener('click', (event) => {
+  const { target } = event;
+  if (target.value === 'Comments') {
+    openComments(target.id);
+  }
 });
 
+popUpCommentsContainer.addEventListener('click', (event) => {
+  const { target } = event;
+  if (target.id === 'xclose') {
+    closePopUp(popUpCommentsContainer);
+  }
+});
