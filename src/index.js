@@ -54,3 +54,5 @@ popupReservationContainer.addEventListener('click', (event) => {
   });
 });
 
+loadReserve();
+
