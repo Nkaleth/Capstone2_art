@@ -163,23 +163,22 @@ To run the ESLint linter
 
 ## 👥 Author <a name="author"></a>
 
-👤 **Author1**
+👤 **Francis Uche**
 
-- GitHub: [@githubhandle](https://github.com/francis3400)
-- Twitter: [@twitterhandle](https://twitter.com/francisBlinkz)
+- GitHub: [@francis3400](https://github.com/francis3400)
+- Twitter: [@francisBlinkz](https://twitter.com/francisBlinkz)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/francis-uche)
 
-👤 **Author2**
+👤 **Nilton Segura**
 
-- GitHub: [@githubhandle](https://www.linkedin.com/in/nseguralu/)
-- Twitter: [@twitterhandle](https://twitter.com/NoeSeguraL)
-- LinkedIn: [LinkedIn](https://github.com/Nkaleth)
+- GitHub: [@Nkaleth](https://github.com/Nkaleth)
+- Twitter: [@NoeSeguraL](https://twitter.com/NoeSeguraL)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nseguralu/)
 
-👤 **Author3**
+👤 **Ayomipo Majekodunmi**
 
-- GitHub: [@githubhandle](@AyomipoMajek)
-- Twitter: [@twitterhandle](Twitter: @pawroyale)
-- LinkedIn: [LinkedIn](LinkedIn: Ayomipo Majek)
+- GitHub: [@AyomipoMajek](https://github.com/AyomipoMajek)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ayomipo-majek-977569185/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
