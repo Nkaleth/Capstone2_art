@@ -245,16 +245,16 @@ main .grid-item {
   padding-right: 30%;
 }
 
+.heart:hover {
+  cursor: pointer;
+}
+
 .paint-name .like {
   float: right;
 }
 
 .likes {
   padding-left: 50%;
-}
-
-.paint-name .like:hover {
-  transform: scale(1.2);
 }
 
 .likes-count span {
