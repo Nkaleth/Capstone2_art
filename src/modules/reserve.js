@@ -21,7 +21,6 @@ const loadReserve = async (container, id) => {
 const addNewReservation = async (idItem, startdate, enddate, username) => {
   const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/reservations/';
   const containerReserves = document.getElementById(`cr${idItem}`);
-  console.log(containerReserves);
   const user = username;
   const startdate1 = startdate;
   const enddate1 = enddate;
@@ -31,7 +30,7 @@ const addNewReservation = async (idItem, startdate, enddate, username) => {
     date_start: startdate1,
     date_end: enddate1,
   };
-  console.log(JSON.stringify(dataToPost));
+  // console.log(JSON.stringify(dataToPost));
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -87,7 +86,7 @@ const openReservations = async (id) => {
                             </article>`;
   popupReservation.innerHTML = stringReservePopup;
   popupReservation.setAttribute('style', 'display: block');
-  const containerReservations = document.getElementById(`c${data.objectID}`);
+  const containerReservations = document.getElementById(`cr${data.objectID}`);
   loadReserve(containerReservations, data.objectID);
   const formReservations = document.querySelector(`#r${data.objectID}`);
   formReservations.addEventListener('submit', (e) => {
