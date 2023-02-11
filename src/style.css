@@ -128,9 +128,9 @@ header > div {
 }
 
 .xcloseR {
-  /* position: relative; */
+  position: relative;
   margin-left: 2%;
-  left: 42%;
+  left: 88%;
   width: 40px;
   top: 2rem;
 }
@@ -277,4 +277,32 @@ main .grid-item {
   outline: none;
   background: rgb(205, 158, 41);
   color: white;
+}
+
+/* Reservations */
+
+.divReservations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addReservations {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: auto;
+  align-items: center;
+}
+
+.formReservations {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Reservations {
+  display: flex;
+  align-items: flex-start;
+  height: 50px;
 }

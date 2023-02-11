@@ -1,13 +1,11 @@
 import './style.css';
 import { closePopUp, openComments } from './modules/comments_popup.js';
 import loadData from './modules/Dom.js';
-import { loadReserve, openReservations } from './modules/reserve.js';
+import { openReservations } from './modules/reserve.js';
 import { likeArts } from './modules/api.js';
 import getCounts from './modules/itemsCounter.js';
 
 getCounts();
-
-// const urlnewID = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 
 const popUpCommentsContainer = document.querySelector('.containerCommentsPopUp');
 const popupReservationContainer = document.querySelector('.reservationPopup');
@@ -39,9 +37,6 @@ popUpCommentsContainer.addEventListener('click', (event) => {
   if (target.id === 'xclose') {
     closePopUp(popUpCommentsContainer);
   }
-<<<<<<< HEAD
-});
-=======
 });
 
 /* Reservations part */
@@ -52,6 +47,3 @@ popupReservationContainer.addEventListener('click', (event) => {
     closePopUp(popupReservationContainer);
   }
 });
-
-loadReserve();
->>>>>>> development
