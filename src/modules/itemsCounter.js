@@ -10,10 +10,9 @@ export default async function getCounts() {
     const countContainer = document.querySelector('.fd-count');
     if (countContainer) {
       countContainer.textContent = count;
-    } else {
-      console.log(`Number of counts: ${count}`);
     }
+    return countContainer;
   } catch (error) {
-    console.error(error);
+    return null;
   }
 }

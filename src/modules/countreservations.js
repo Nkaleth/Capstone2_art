@@ -1,4 +1,4 @@
-const countData = (data) => {
+const countDataReservation = (data) => {
   let count = 0;
   if (!data) {
     return 'Reservations(0)';
@@ -9,4 +9,4 @@ const countData = (data) => {
   return `Reservations(${count})`;
 };
 
-export default countData;
+export default countDataReservation;
