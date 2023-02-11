@@ -12,7 +12,7 @@ const loadReserve = async (container, id) => {
   divCount.innerHTML = count;
   let string = '';
   data.forEach((element) => {
-    string += `<li class="userDetails">  ${element.username} ${element.date_start}: ${element.date_end}</li>`;
+    string += `<li class="userDetails">  ${element.username}:  ${element.date_start} <i>to</i> ${element.date_end}</li>`;
   });
   container.innerHTML = string;
   return count;

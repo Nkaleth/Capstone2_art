@@ -52,12 +52,8 @@ header > div {
 .fd-categories {
   font-weight: bolder;
   text-transform: uppercase;
-  color: darkgray;
+  color: rgb(34, 34, 34);
   white-space: nowrap;
-}
-
-.fd-categories:hover {
-  color: black;
 }
 
 .artworks {
@@ -94,7 +90,8 @@ header > div {
   padding: 20px;
 }
 
-.containerCommentsPopUp {
+.containerCommentsPopUp,
+.reservationPopup {
   display: none;
   overflow-y: auto;
   position: fixed;
@@ -102,7 +99,7 @@ header > div {
   top: 0;
   left: 0;
   width: 100%;
-  height: 90vh;
+  height: 100%;
   opacity: 98%;
   backdrop-filter: blur(80px);
   transition: height 1s ease;
@@ -113,7 +110,7 @@ header > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .xclose {
@@ -125,23 +122,48 @@ header > div {
 }
 
 .imageComments {
-  width: 100%;
-  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .imageComments img {
-  width: 75%;
-  height: auto;
+  width: 50vw;
+  height: 50vh;
 }
 
 .titleComments {
+  font-size: 25px;
   display: flex;
   justify-content: center;
   width: 100%;
   height: 40px;
+}
+
+.dataPaintingComments {
+  font-size: 25px;
+}
+
+.countComments,
+.countReservations {
+  font-size: 30px;
+}
+
+.listComments,
+.listReservations {
+  border: none;
+  overflow-y: scroll;
+  height: 20vh;
+  background: rgb(213, 213, 213);
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+.userComment,
+.userDetails {
+  list-style-type: none;
+  margin: 5px;
+  font-size: 25px;
 }
 
 .detailsComments {
@@ -166,32 +188,48 @@ header > div {
   margin: 1%;
 }
 
-.divComments {
+.addComment,
+.addReservation {
+  font-size: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.divComments ul {
-  padding-inline-start: 0;
-}
-
-.divComments li {
-  display: block;
-}
-
-.addComment {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  height: auto;
-  align-items: center;
+  margin-bottom: 100px;
 }
 
 .formComment {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.username,
+.comment {
+  font-size: 20px;
+  font-style: italic;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 80px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.addCommentButton {
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.reserveButton {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 45%;
 }
 
 .comment {
@@ -273,17 +311,6 @@ header > div {
   padding: 0 0.5em;
 }
 
-.fd-categories {
-  font-weight: bolder;
-  text-transform: uppercase;
-  color: darkgray;
-  white-space: nowrap;
-}
-
-.fd-categories:hover {
-  color: black;
-}
-
 .artworks {
   display: inline-block;
   position: relative;
@@ -300,45 +327,6 @@ header > div {
   width: 3%;
 }
 
-/* Comments pop up styles */
-
-.reservationPopup {
-  display: none;
-  overflow-y: auto;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90vh;
-  opacity: 98%;
-  backdrop-filter: blur(80px);
-  transition: height 1s ease;
-  padding: 20px;
-}
-
-.containerCommentsPopUp {
-  display: none;
-  overflow-y: auto;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90vh;
-  opacity: 98%;
-  backdrop-filter: blur(80px);
-  transition: height 1s ease;
-  padding: 20px;
-}
-
-.popUpComments {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
 .xclose {
   position: relative;
   margin-left: 2%;
@@ -353,26 +341,6 @@ header > div {
   left: 88%;
   width: 40px;
   top: 2rem;
-}
-
-.imageComments {
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.imageComments img {
-  width: 75%;
-  height: auto;
-}
-
-.titleComments {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 40px;
 }
 
 .detailsComments {
@@ -397,28 +365,6 @@ header > div {
   margin: 1%;
 }
 
-.divComments {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.divComments ul {
-  padding-inline-start: 0;
-}
-
-.divComments li {
-  display: block;
-}
-
-.addComment {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  height: auto;
-  align-items: center;
-}
-
 .formComment {
   display: flex;
   flex-direction: column;
@@ -431,30 +377,13 @@ header > div {
   height: 50px;
 }
 
-/* .gallery {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  column-gap: 2%;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 5em;
-} */
-
-/* main .grid-item {
-  border: none;
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-} */
-
 .paintings {
   font-size: 20px;
   box-sizing: border-box;
   border: solid;
   border-radius: 10px;
   box-shadow: 3px 3px 5px #000;
-  background: rgb(164, 164, 173);
+  background: rgb(181, 181, 185);
 }
 
 .paintings img {
@@ -472,17 +401,9 @@ header > div {
   height: 2.4vh;
 }
 
-/* .paintings > div {
-  margin-bottom: 2em;
-} */
-
 .heart:hover {
   cursor: pointer;
 }
-
-/* .paint-name .like {
-  float: right;
-} */
 
 .likes {
   padding-bottom: 20px;
@@ -544,10 +465,24 @@ header > div {
   align-items: center;
 }
 
-.formReservations {
+.formReserve {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  font-size: 25px;
+}
+
+#username,
+#startDate,
+#endDate {
+  font-size: 20px;
+  font-style: italic;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 80px;
+  padding-left: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: none;
 }
 
 .Reservations {
@@ -555,30 +490,6 @@ header > div {
   align-items: flex-start;
   height: 50px;
 }
-/* .paintings > div {
-  margin-bottom: 2em;
-} */
-
-/* .like {
-  padding-top: 4%;
-  padding-right: 30%;
-} */
-
-/* .paint-name .like {
-  float: right;
-} */
-
-/* .likes {
-  padding-left: 50%;
-} */
-
-/* .paint-name .like:hover {
-  transform: scale(1.2);
-} */
-
-/* .likes-count span {
-  color: gray;
-} */
 
 .grid-container button {
   width: 100%;
