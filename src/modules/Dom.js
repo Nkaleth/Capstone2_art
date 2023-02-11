@@ -24,11 +24,11 @@ const loadData = async () => {
       stringPaintings += `<div class="grid-item">  <!-- container for each painting-->
                                     <div class="paintings">
                                       <div>
-                                        <img src= '${data.primaryImageSmall}' height="200" alt="PAINTING IMAGE">
+                                        <img class="painting" src= '${data.primaryImageSmall}' height="200" alt="PAINTING IMAGE">
                                         </div>
                                         <div class="paint-name">
                                         <p>${data.title}</p>
-                                        <span class="like"><img class="heart" id="h${data.objectID}" src="${ht2}" alt="Likes(${idKey[data.objectID]}" width="15" height="15" srcset="" name="heart"  alt="Likes(${idKey[data.objectID]})"></span> 
+                                        <span class="like" ><img class="heart" id="h${data.objectID}" src="${ht2}" alt="Likes(${idKey[data.objectID]}" width="15" height="15" srcset="" name="heart"  alt="Likes(${idKey[data.objectID]})"></span> 
                                         </div>         
                                       
                                       <div class="likes">

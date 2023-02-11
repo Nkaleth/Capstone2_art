@@ -3,7 +3,227 @@
 body {
   background-color: white;
   font-family: "Titillium Web", sans-serif;
-  min-height: 100vh;
+  position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body h1 {
+  font-weight: 700;
+}
+
+body h2 {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.art {
+  font-weight: 700;
+}
+
+header {
+  width: 100%;
+  height: 7em;
+  display: flex;
+  align-items: center;
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  background: hsl(240deg 6% 87%);
+  border-bottom: 1px solid black;
+  top: 0;
+}
+
+.fd-number {
+  font-weight: bold;
+  color: black;
+}
+
+.fd-number span {
+  font-weight: bold;
+  color: red;
+  padding: 0 0.5em;
+}
+
+.fd-categories {
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: darkgray;
+  white-space: nowrap;
+}
+
+.fd-categories:hover {
+  color: black;
+}
+
+.artworks {
+  display: inline-block;
+  position: relative;
+}
+
+.artworks h1 {
+  position: relative;
+  color: rgb(77, 70, 70);
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.home-logo {
+  width: 3%;
+  padding-left: 20px;
+}
+
+/* Comments pop up styles */
+
+.reservationPopup {
+  display: none;
+  overflow-y: auto;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  opacity: 98%;
+  backdrop-filter: blur(80px);
+  transition: height 1s ease;
+  padding: 20px;
+}
+
+.containerCommentsPopUp {
+  display: none;
+  overflow-y: auto;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  opacity: 98%;
+  backdrop-filter: blur(80px);
+  transition: height 1s ease;
+  padding: 20px;
+}
+
+.popUpComments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.xclose {
+  position: relative;
+  margin-left: 2%;
+  left: 42%;
+  width: 40px;
+  top: 2rem;
+}
+
+.imageComments {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageComments img {
+  width: 75%;
+  height: auto;
+}
+
+.titleComments {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+}
+
+.detailsComments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.detailsComments ul {
+  padding-inline-start: 0;
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.detailsComments li {
+  display: block;
+  margin: 1%;
+}
+
+.divComments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divComments ul {
+  padding-inline-start: 0;
+}
+
+.divComments li {
+  display: block;
+}
+
+.addComment {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: auto;
+  align-items: center;
+}
+
+.formComment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  height: 50px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5em;
+}
+
+main .grid-item {
+  border: none;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.paintings img {
+  border-radius: 5px;
+}
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap");
+
+body {
+  background-color: white;
+  font-family: "Titillium Web", sans-serif;
   position: relative;
   margin: 0 !important;
   padding: 0 !important;
@@ -211,7 +431,7 @@ header > div {
   height: 50px;
 }
 
-.gallery {
+/* .gallery {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   column-gap: 2%;
@@ -219,46 +439,75 @@ header > div {
   justify-content: center;
   align-items: center;
   padding-bottom: 5em;
-}
+} */
 
-main .grid-item {
+/* main .grid-item {
   border: none;
   padding: 20px;
   font-size: 30px;
   text-align: center;
-}
+} */
 
 .paintings {
-  font-size: small;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: solid;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #000;
+  background: rgb(164, 164, 173);
 }
 
 .paintings img {
   border-radius: 5px;
 }
 
-.paintings > div {
-  margin-bottom: 2em;
+.painting {
+  width: 25vw;
+  height: 25vh;
+  margin-top: 20px;
 }
 
-.like {
-  padding-top: 4%;
-  padding-right: 30%;
+.like img {
+  width: 2vw;
+  height: 2.4vh;
 }
+
+/* .paintings > div {
+  margin-bottom: 2em;
+} */
 
 .heart:hover {
   cursor: pointer;
 }
 
-.paint-name .like {
+/* .paint-name .like {
   float: right;
-}
+} */
 
 .likes {
-  padding-left: 50%;
+  padding-bottom: 20px;
 }
 
 .likes-count span {
-  color: gray;
+  color: rgb(53, 49, 49);
+}
+
+.bComments {
+  background: none;
+}
+
+.bReservations {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  background: none;
+}
+
+.footer {
+  border: solid;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 20px;
+  background: hsl(240deg 6% 87%);
 }
 
 .grid-container button {
@@ -305,4 +554,46 @@ main .grid-item {
   display: flex;
   align-items: flex-start;
   height: 50px;
+}
+/* .paintings > div {
+  margin-bottom: 2em;
+} */
+
+/* .like {
+  padding-top: 4%;
+  padding-right: 30%;
+} */
+
+/* .paint-name .like {
+  float: right;
+} */
+
+/* .likes {
+  padding-left: 50%;
+} */
+
+/* .paint-name .like:hover {
+  transform: scale(1.2);
+} */
+
+/* .likes-count span {
+  color: gray;
+} */
+
+.grid-container button {
+  width: 100%;
+  border: 1px black solid;
+  line-height: 1em;
+  outline: none;
+  font-size: large;
+  color: gray;
+  padding: 0.5em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.grid-container button:hover {
+  outline: none;
+  background: rgb(205, 158, 41);
+  color: white;
 }
