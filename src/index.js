@@ -31,4 +31,3 @@ popUpCommentsContainer.addEventListener('click', (event) => {
     closePopUp(popUpCommentsContainer);
   }
 });
-/* Likes */
