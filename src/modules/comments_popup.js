@@ -12,7 +12,7 @@ const loadComments = async (container, id) => {
   divCount.innerHTML = count;
   let string = '';
   data.forEach((element) => {
-    string += `<li class="userComment">  ${element.creation_date} ${element.username}: ${element.comment}</li>`;
+    string += `<li class="userComment">  ${element.creation_date} ${element.username} <i>said</i> &nbsp "${element.comment}"</li>`;
   });
   container.innerHTML = string;
   return count;

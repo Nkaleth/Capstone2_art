@@ -1,5 +1,5 @@
 import Xclose from '../images/close.svg';
-import countData from './countreservations.js';
+import countDataReservation from './countreservations.js';
 
 const popupReservation = document.querySelector('.reservationPopup');
 
@@ -7,12 +7,12 @@ const loadReserve = async (container, id) => {
   const request = new Request(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/reservations?item_id=${id}`);
   const response = await fetch(request);
   const data = await response.json();
-  const count = countData(data);
+  const count = countDataReservation(data);
   const divCount = document.querySelector('.countReservations');
   divCount.innerHTML = count;
   let string = '';
   data.forEach((element) => {
-    string += `<li class="userDetails">  ${element.username} ${element.date_start}: ${element.date_end}</li>`;
+    string += `<li class="userDetails">  ${element.username}:  ${element.date_start} <i>to</i> ${element.date_end}</li>`;
   });
   container.innerHTML = string;
   return count;
