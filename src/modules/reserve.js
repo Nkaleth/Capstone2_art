@@ -51,7 +51,7 @@ const openReservations = async (id) => {
   const response = await fetch(request);
   const data = await response.json();
   const stringReservePopup = `<article class="popUpReservations" id=${data.objectID}>
-                              <img id="xclose" class="xclose" src = "${Xclose}">
+                              <img id="xclose" class="xcloseR" src = "${Xclose}">
                               <section class="imageComments">
                                   <img src=${data.primaryImage} alt="" srcset="">
                               </section>
