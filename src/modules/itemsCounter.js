@@ -1,8 +1,20 @@
-const itemsCounter = (series) => {
-  const seriesNumber = series.length;
-  // console.log(seriesNumber);
-  const seriesMenu = document.querySelector('.fd-count');
-  seriesMenu.textContent = `Series (${seriesNumber})`;
-};
+export default async function getCounts() {
+  try {
+    const response = await fetch(
+      "https://collectionapi.metmuseum.org/public/collection/v1/search?q=Auguste+Renoir&showOnly=openAccess%7CwithImage%7ConDisplay&isPublicDomain=true&hasImages=true"
+    );
+    const data = await response.json();
+    const count = data.total;
 
-export default itemsCounter;
+    // update the count in a class .count
+    const countContainer = document.querySelector(".fd-count");
+    if (countContainer) {
+      countContainer.textContent = count;
+    } else {
+      console.log(`Number of counts: ${count}`);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
