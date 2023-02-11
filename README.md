@@ -60,11 +60,11 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [JavaScript Capstone] <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
-**[your_project__name]** is a...
+**[JavaScript Capstone]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -207,15 +207,21 @@ Example:
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/francis3400)
+- Twitter: [@twitterhandle](https://twitter.com/francisBlinkz)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/francis-uche)
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://www.linkedin.com/in/nseguralu/)
+- Twitter: [@twitterhandle](https://twitter.com/NoeSeguraL)
+- LinkedIn: [LinkedIn](https://github.com/Nkaleth)
+
+👤 **Author3**
+
+- GitHub: [@githubhandle](@AyomipoMajek)
+- Twitter: [@twitterhandle](Twitter: @pawroyale)
+- LinkedIn: [LinkedIn](LinkedIn: Ayomipo Majek)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
