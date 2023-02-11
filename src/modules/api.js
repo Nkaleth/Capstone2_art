@@ -1,4 +1,3 @@
-// Involvement API app_id: kpvz19cjHtM9ksn2bg7S
 const invAPI = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aCIWbt6ixkSGou3TfOCc/likes';
 const likeArts = async (id) => {
   const API_URL = invAPI;
