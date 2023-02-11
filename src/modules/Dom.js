@@ -37,7 +37,7 @@ const loadData = async () => {
                                         <button id="${data.objectID}" class="bComments" value="Comments" >Comments</button>                            
                                       </div>
                                       <div>
-                                        <button id="${data.objectID}" class="bReservations">Reservations</button>
+                                        <button id="${data.objectID}" class="bReservations" value="Reservations">Reservations</button>
                                       </div>
                                   </div>
                                 </div>`;
