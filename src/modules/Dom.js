@@ -24,7 +24,7 @@ const loadData = async () => {
       stringPaintings += `<div class="grid-item">  <!-- container for each painting-->
                                     <div class="paintings">
                                       <div>
-                                        <img src= '${data.primaryImageSmall}' height="200" alt="PAINTING IMAGE">
+                                        <img class="painting" src= '${data.primaryImageSmall}' height="200" alt="PAINTING IMAGE">
                                         </div>
                                         <div class="paint-name">
                                         <p>${data.title}</p>
