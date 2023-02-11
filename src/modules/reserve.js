@@ -1,5 +1,5 @@
 import Xclose from '../images/close.svg';
-// import countData from './countreservations.js';
+import countData from './countreservations.js';
 
 const popupReservation = document.querySelector('.reservationPopup');
 
@@ -12,7 +12,7 @@ const loadReserve = async (container, id) => {
   divCount.innerHTML = count;
   let string = '';
   data.forEach((element) => {
-    string += `<li class="userDetails">  ${element.username} ${element.start_date}: ${element.end_date}</li>`;
+    string += `<li class="userDetails">  ${element.username} ${element.date_start}: ${element.date_end}</li>`;
   });
   container.innerHTML = string;
   return count;
@@ -30,7 +30,7 @@ const addNewReservation = async (idItem, startdate, enddate, username) => {
     date_start: startdate1,
     date_end: enddate1,
   };
-  debugger
+  // console.log(JSON.stringify(dataToPost));
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -87,17 +87,13 @@ const openReservations = async (id) => {
                             </article>`;
   popupReservation.innerHTML = stringReservePopup;
   popupReservation.setAttribute('style', 'display: block');
-  const containerReservations = document.getElementById(`c${data.objectID}`);
+  const containerReservations = document.getElementById(`cr${data.objectID}`);
   loadReserve(containerReservations, data.objectID);
   const formReservations = document.querySelector(`#r${data.objectID}`);
   formReservations.addEventListener('submit', (e) => {
     e.preventDefault();
-    // const uN = document.querySelector('#name');
-    // const start_date = document.querySelector('#startDate');
-    // const end_date = document.querySelector('#endDate');
     const { username, startDate, endDate } = formReservations.elements;
-    // console.log(data.objectID, username.value, startDate.value, endDate.value);
-    addNewReservation(data.objectID, username.value, startDate.value, endDate.value);
+    addNewReservation(data.objectID, startDate.value, endDate.value, username.value);
     formReservations.reset();
   });
 };
