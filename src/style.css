@@ -243,11 +243,6 @@ main .grid-item {
   margin-bottom: 2em;
 }
 
-.like {
-  padding-top: 4%;
-  padding-right: 30%;
-}
-
 .paint-name .like {
   float: right;
 }
