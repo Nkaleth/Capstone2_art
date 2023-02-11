@@ -30,6 +30,7 @@ const addNewReservation = async (idItem, startdate, enddate, username) => {
     date_start: startdate1,
     date_end: enddate1,
   };
+  debugger
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -37,6 +38,7 @@ const addNewReservation = async (idItem, startdate, enddate, username) => {
     },
     body: JSON.stringify(dataToPost),
   });
+  debugger
   if (!response.ok) {
     const message = `An error has occured: ${response.status}`;
     throw new Error(message);
