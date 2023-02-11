@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import countDataReservation from './modules/countreservations.js';
+import countDataReservation from './countreservations.js';
 
 describe('Testing Reservations counter', () => {
   test('should return Reservations(3)', () => {

@@ -3,9 +3,6 @@ import { closePopUp, openComments } from './modules/comments_popup.js';
 import loadData from './modules/Dom.js';
 import { openReservations } from './modules/reserve.js';
 import { likeArts } from './modules/api.js';
-import getCounts from './modules/itemsCounter.js';
-
-getCounts();
 
 const popUpCommentsContainer = document.querySelector('.containerCommentsPopUp');
 const popupReservationContainer = document.querySelector('.reservationPopup');
