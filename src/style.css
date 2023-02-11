@@ -30,7 +30,7 @@ header {
 }
 
 header > div {
-  width: 1550px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   display: flex;

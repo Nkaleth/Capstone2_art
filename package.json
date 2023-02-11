@@ -6,19 +6,20 @@
   "scripts": {
     "test": "jest",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nkaleth/Capstone2_arts.git"
+    "url": "git+https://github.com/Nkaleth/Capstone2_art.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Nkaleth/Capstone2_arts/issues"
+    "url": "https://github.com/Nkaleth/Capstone2_art/issues"
   },
-  "homepage": "https://github.com/Nkaleth/Capstone2_arts#readme",
+  "homepage": "https://Nkaleth.github.io/Capstone2_art/",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.20.11",
     "babel-eslint": "^10.1.0",
@@ -40,6 +41,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "gh-pages": "^5.0.0",
     "lodash": "^4.17.21"
   }
 }
